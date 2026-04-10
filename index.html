@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optiq</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="app-title">
+        <img class="app-title-icon" src="/app-icon.png" alt="icon" />
+        <h1>Optiq</h1>
+      </div>
+      <p class="hint"><kbd>Ctrl+Alt+P</kbd></p>
+    </header>
+
+    <div id="status">
+      <span id="status-text">Ready</span>
+    </div>
+
+    <div id="settings">
+      <div id="key-configured" class="hidden">
+        <span id="configured-text">&#10003; API key configured</span>
+        <button id="delete-btn" class="btn-danger">Delete</button>
+      </div>
+      <div id="key-form">
+        <h2>API Key</h2>
+        <label for="api-key">OpenAI API Key</label>
+        <input type="password" id="api-key" placeholder="sk-..." />
+        <button id="save-btn">Save Key</button>
+        <span id="save-status"></span>
+      </div>
+    </div>
+
+    <div id="history" class="hidden">
+      <h2>Last Optimization</h2>
+      <div class="panel optimized-panel">
+        <div class="panel-header">
+          <h3>Optimized</h3>
+          <button id="copy-btn" class="btn-copy" title="Copy to clipboard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy</span>
+          </button>
+        </div>
+        <pre id="optimized"></pre>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p class="hint">Press <kbd>Ctrl+Alt+P</kbd> anywhere to optimize your clipboard</p>
+    </footer>
+  </div>
+  <script src="/src/main.js" type="module"></script>
+</body>
+</html>
