@@ -1,7 +1,7 @@
-use std::path::PathBuf;
-
 #[cfg(windows)]
 use std::fs;
+#[cfg(windows)]
+use std::path::PathBuf;
 
 #[cfg(windows)]
 pub fn config_dir() -> PathBuf {
@@ -114,7 +114,7 @@ mod dpapi {
 
     pub fn delete() -> Result<(), String> {
         let entry = keyring::Entry::new(SERVICE, ACCOUNT).map_err(|e| e.to_string())?;
-        entry.delete_credential().map_err(|e| e.to_string())
+        entry.delete_password().map_err(|e| e.to_string())
     }
 }
 
